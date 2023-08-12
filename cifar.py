@@ -23,8 +23,10 @@ from torchvision.datasets import CIFAR10
 from torchvision import models
 from data_loader import createDataLoaders
 import pickle
+from dotenv import load_dotenv
 import os
 
+load_dotenv()
 
 DATA_ROOT = "./dataset"
 

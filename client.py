@@ -23,8 +23,10 @@ DEVICE: str = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # pylint: enable=no-member
 from data_loader import createDataLoaders
 import pickle
+from dotenv import load_dotenv
 import os
 
+load_dotenv()
 DATA_ROOT = "./dataset"
 data_folder = os.environ['data_dir']
 images_pickle = os.path.join(data_folder, 'image_data.pickle')
