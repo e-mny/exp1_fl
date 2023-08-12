@@ -17,8 +17,8 @@ import cifar
 USE_FEDBN: bool = True
 
 # pylint: disable=no-member
-# DEVICE: str = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-DEVICE = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+DEVICE: str = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+# DEVICE = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 
 # pylint: enable=no-member
 from data_loader import createDataLoaders
@@ -26,7 +26,8 @@ import pickle
 import os
 
 DATA_ROOT = "./dataset"
-data_folder = '/Users/enoch/Library/CloudStorage/OneDrive-NanyangTechnologicalUniversity/CNYang/OFYP/Coding/Data/CMMD/'
+data_folder = '/home/emok/sq58_scratch/emok/Data/CBIS-DDSM/'
+# data_folder = '/home/emok/sq58_scratch/emok/Data/CMMD/CMMD/'
 images_pickle = os.path.join(data_folder, 'image_data.pickle')
 labels_pickle = os.path.join(data_folder, 'label_data.pickle')
 with open(images_pickle, 'rb') as image_pickle_file:
