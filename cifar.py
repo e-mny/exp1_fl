@@ -26,8 +26,9 @@ import pickle
 import os
 
 DATA_ROOT = "./dataset"
-data_folder = '/Users/enoch/Library/CloudStorage/OneDrive-NanyangTechnologicalUniversity/CNYang/OFYP/Coding/Data/CBIS-DDSM'
-images_pickle = os.path.join(data_folder, 'image_data.pickle')
+
+data_folder = '/home/emok/sq58_scratch/emok/Data/CBIS-DDSM/'
+# data_folder = '/home/emok/sq58_scratch/emok/Data/CMMD/CMMD/'images_pickle = os.path.join(data_folder, 'image_data.pickle')
 labels_pickle = os.path.join(data_folder, 'label_data.pickle')
 with open(images_pickle, 'rb') as image_pickle_file:
     all_images = pickle.load(image_pickle_file)
