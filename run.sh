@@ -1,5 +1,5 @@
 #!/bin/bash
-num_clients=5
+num_clients=2
 
 # Federated Training
 echo "Starting server"
