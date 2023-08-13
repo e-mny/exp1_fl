@@ -177,8 +177,9 @@ def test(
 
 
 def main():
-    # DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    DEVICE = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+    DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    # DEVICE = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+    print(f"Device: {DEVICE}")
     print("Centralized PyTorch training")
     print("Load data")
     trainloader, testloader = createDataLoaders(all_images, all_labels, 0.7, 0.3, 32)
