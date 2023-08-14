@@ -134,7 +134,9 @@ def train(
     for epoch in range(epochs):  # loop over the dataset multiple times
         running_loss = 0.0
         for i, data in enumerate(trainloader, 0):
-            images, labels = data[0].to(device), data[1].to(device)
+            labels = data[1].type(torch.LongTensor)
+
+            images, labels = data[0].to(device), labels.to(device)
 
             # zero the parameter gradients
             optimizer.zero_grad()
@@ -167,7 +169,8 @@ def test(
     net.eval()
     with torch.no_grad():
         for data in testloader:
-            images, labels = data[0].to(device), data[1].to(device)
+            labels = data[1].type(torch.LongTensor)
+            images, labels = data[0].to(device), labels.to(device)
             outputs = net(images)
             loss += criterion(outputs, labels).item()
             _, predicted = torch.max(outputs.data, 1)  # pylint: disable=no-member
