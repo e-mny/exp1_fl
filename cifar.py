@@ -185,7 +185,7 @@ def main():
     print(f"Device: {DEVICE}")
     print("Centralized PyTorch training")
     print("Load data")
-    trainloader, testloader = createDataLoaders(all_images, all_labels, 0.7, 0.3, 32)
+    trainloader, testloader, num_examples = createDataLoaders(all_images, all_labels, 0.7, 0.3, 32)
     net = CustomDenseNet(num_classes=2).to(DEVICE)
     net.eval()
     print("Start training")
